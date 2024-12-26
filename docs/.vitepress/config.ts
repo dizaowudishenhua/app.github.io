@@ -11,6 +11,7 @@ const message =
 </a>
 `
 export default defineConfig({
+  base:"/app.github.io/",
   title: "快乐的大番薯",
   description: "快乐的大番薯",
   themeConfig: {
