@@ -30,8 +30,12 @@ export default defineConfig({
       {
         "text": "趣阅读",
         "link": "/tools/readbook"
+      },
+      {
+        "text": "PDF工具",
+        "link": "/tools/pdf"
       }
     ],
-  }
+  },
 
 })

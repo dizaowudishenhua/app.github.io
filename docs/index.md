@@ -12,6 +12,9 @@ hero:
     - theme: brand
       text: 趣阅读
       link: /tools/readbook
+    - theme: brand
+      text: PDF工具
+      link: /tools/pdf
 
 features:
   - title: 健康
