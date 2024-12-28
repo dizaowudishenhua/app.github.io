@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
+import {zh} from "./zh"
+import {en} from "./en"
 // https://vitepress.dev/reference/site-config
 const message =
   `
@@ -14,29 +17,35 @@ export default defineConfig({
   base:"/",
   title: "快乐的大番薯",
   description: "快乐的大番薯",
+  lastUpdated:true,
+  rewrites: {
+    'zh/:rest*': ':rest*'
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '首页', link: '/' }
-    ],
+
     footer: {
       "message": message,
       "copyright": 'Copyright 太阳系 '
     },
-    sidebar: [
-      {
-        "text": "护眼卫士",
-        "link": "/tools/eye-protecter"
-      },
-      {
-        "text": "趣阅读",
-        "link": "/tools/readbook"
-      },
-      {
-        "text": "PDF工具",
-        "link": "/tools/pdf"
-      }
-    ],
+    
+    search:{
+      provider:"local"
+    },
+    
   },
-
-})
+  locales: {
+    root:{
+      label:"简体中文",
+      ...zh
+    },
+    en:{
+      label:"english",
+      ...en
+    }
+  }
+  // vite:{
+  //   plugins: [pagefindPlugin()],
+  // }
+},
+)
